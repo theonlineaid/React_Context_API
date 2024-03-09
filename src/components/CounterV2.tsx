@@ -8,7 +8,7 @@ export default function CounterV2() {
     const incrementCounter = () => {
         dispatch({ type: 'INCREMENT' });
 
-        console.log(dispatch)
+        // console.log(dispatch)
     };
 
     // Decrement counter

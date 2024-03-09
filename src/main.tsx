@@ -4,10 +4,14 @@ import App from './App.tsx'
 import './index.css'
 import { CounterProvider } from './context/counterV2.tsx'
 
+import {CartProvider} from './context/Cart.tsx';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <CounterProvider>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </CounterProvider>
   </React.StrictMode>,
 )

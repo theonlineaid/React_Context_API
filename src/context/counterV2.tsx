@@ -11,11 +11,15 @@ type Action = { type: 'INCREMENT' } | { type: 'DECREMENT' };
 
 export const CounterContext = createContext<CounterContextType | null>(null);
 
-const initialState = { counter: 0 };
+const initialState = { counter: 0, ammount: 0 };
 
 const reducer = (state: typeof initialState, action: Action): typeof initialState => {
     switch (action.type) {
         case 'INCREMENT':
+            // See the different in console for more information
+            console.log({state})
+            console.log({...state})
+            // [..] spread operator to deacture all state variables
             return { ...state, counter: state.counter + 1 };
         case 'DECREMENT':
             return { ...state, counter: state.counter - 1 };
