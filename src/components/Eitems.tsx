@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { CartContext } from "../context/Cart";
+import { useCart } from "../context/Cart";
 
 type Props = {
   name: string;
@@ -7,9 +6,8 @@ type Props = {
 }
 
 export default function Eitems({ name, price }: Props) {
-  const cart = useContext(CartContext)
-  // Function to handle adding an item to the cart
-
+  const cart = useCart()
+  
   console.log(cart)
 
   const handleAddToCart = () => {

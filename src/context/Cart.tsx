@@ -1,4 +1,4 @@
-import React, {createContext, useState } from 'react'
+import React, {createContext, useContext, useState } from 'react'
 
 // Define the type for the context value
 type CartContextType = {
@@ -7,6 +7,18 @@ type CartContextType = {
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
+
+
+// use custome hook 
+export const useCart= ()=> {
+  const context = useContext(CartContext)
+  if (context === null) {
+    throw new Error('useCart must be used within a CartProvider')
+  }
+  return context
+}
+
+
 
 export const CartProvider:  React.FC<React.PropsWithChildren<{}>>  = ({children}) => {
 

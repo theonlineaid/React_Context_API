@@ -1,11 +1,11 @@
-import { useContext, useState } from "react"
-import { CartContext } from "../context/Cart"
+import { useState } from "react"
+import { useCart } from "../context/Cart";
 
 type Props = {}
 
 export default function Ecart({ }: Props) {
 
-    const cart = useContext(CartContext)
+    const cart = useCart();
     const [showCheckout, setShowCheckout] = useState<boolean>(false);
 
     const total = cart?.items.reduce((total, item) => total + item.price, 0)
